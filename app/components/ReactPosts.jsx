@@ -2,6 +2,7 @@ import React from 'react';
 import * as _ from 'lodash';
 import '../styles.css';
 
+// импортируем компоненты:
 import Post from "./Post";
 import SortingButton from "./SortingButton";
 
