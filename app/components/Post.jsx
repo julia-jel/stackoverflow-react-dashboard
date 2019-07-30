@@ -8,6 +8,14 @@ const convertDate = function(number) {
   return dateStr;
 }
 
+//функция для конвертации закодированных значений JSON типа &quot; в обычный текст:
+
+const decodeJSON = function(str) {
+  var txt = document.createElement('textarea');
+	txt.innerHTML = str;
+	return txt.value;
+}
+
 //Компонент для отдельно взятого поста:
 
 class Post extends React.Component {
@@ -22,7 +30,7 @@ class Post extends React.Component {
         <div id={this.props.id} className="post" date={this.props.date}>
           <img className="user-img" src={this.props.imgSrc} alt="user's image"/>
           <div className="post-title">
-            {this.props.title}
+            {decodeJSON(this.props.title)}
             <div className="creation-date">{convertDate(this.props.date)}</div>
           </div>
         </div>
